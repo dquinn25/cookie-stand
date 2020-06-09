@@ -151,23 +151,7 @@ var limaStore = {
 limaStore.createHours()
 limaStore.renderToPage()
 
-
-// var DubaiMinCust: 11;
-// var seattleMaxCust: 38;
-// var SeattleAverage: 3.7;
-
-// var parisMinCust: 20;
-// var parisMaxCust: 38;
-// var parisAverage: 2.3;
-
-// var limaMinCust: 2;
-// var limaMaxCust: 16;
-// var limaAverage: 4.6;
-
-// var randomCookiesSeattle 
-
-
-// tokyoStore.renderToPage()
+ 
 
 
 
@@ -177,7 +161,3 @@ limaStore.renderToPage()
 
 
 
-
-
-
-// document.getElementById("store2").innerHTML = "this is how we pass text";
