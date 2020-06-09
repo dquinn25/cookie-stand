@@ -13,37 +13,46 @@ var seattleStore = {
     storeId : 'seattleStore-ul',
     createHours : createHours,
     renderToPage : renderToPage, 
+    total : 0,
 }
     function renderToPage(){
         var seattleList = document.getElementById(this.storeId); // getElementById takes an argument of the id as a string
     // 2. new element
     var newListItem = document.createElement('h3');
     // 2.5 content
+
     newListItem.textContent = this.name;
     // 3. put it on page
     seattleList.appendChild(newListItem);
     // ==============
     // 2. new element
-    for(var i = 0; i < 14; i++ ){
+    for(var i = 0; i < 15; i++ ){
     var newListItem = document.createElement('li');
     // 2.5 content
     newListItem.textContent = hours[i] + ' cookies' + ' ' + this.hourlyCookies[i];
     // 3. put it on page
     seattleList.appendChild(newListItem);
     }
+    var newListItem = document.createElement('li');
+    // 2.5 content
+
+    newListItem.textContent = 'Total: ' + this.total + ' cookies';
+    // 3. put it on page
+    seattleList.appendChild(newListItem); 
 }
 
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
 }
-            function createHours() {
-                console.log(this.MinCust);
-                for(var i = 0; i < 14; i++ ){
-                    var getCust = Math.floor(getRandomArbitrary(this.MinCust, this.MaxCust));
-                    console.log(getCust);
-                    this.hourlyCookies.push(Math.floor(this.Average * getCust));
-                }
-            }
+function createHours() {
+    console.log(this.MinCust);
+    for(var i = 0; i < 15; i++ ){
+        var getCust = Math.floor(getRandomArbitrary(this.MinCust, this.MaxCust));
+        var hourlyTotal = Math.floor(this.Average * getCust)
+        this.hourlyCookies.push(hourlyTotal);
+        this.total += hourlyTotal 
+    }
+}
 
 // function totalTheCookies(){
 //     var total = 0
@@ -56,6 +65,8 @@ function getRandomArbitrary(min, max) {
 seattleStore.createHours()
 seattleStore.renderToPage()
 
+
+console.log(seattleStore.total)
 // var tokyoStore = {
 //     name: "Tokyo",
 //      tokyoMinCust: 23,
@@ -77,6 +88,7 @@ var tokyoStore = {
     storeId : 'tokyoStore-ul',
     createHours : createHours,
     renderToPage : renderToPage, 
+    total : 0,
 }
 
 tokyoStore.createHours()
@@ -95,6 +107,7 @@ var dubaiStore = {
     storeId : 'dubaiStore-ul',
     createHours : createHours,
     renderToPage : renderToPage, 
+    total : 0,
 }
 
 dubaiStore.createHours()
@@ -112,6 +125,7 @@ var parisStore = {
     storeId : 'parisStore-ul',
     createHours : createHours,
     renderToPage : renderToPage, 
+    total : 0,
 }
 
 parisStore.createHours()
@@ -131,6 +145,7 @@ var limaStore = {
     storeId : 'limaStore-ul',
     createHours : createHours,
     renderToPage : renderToPage, 
+    total : 0,
 }
 
 limaStore.createHours()
